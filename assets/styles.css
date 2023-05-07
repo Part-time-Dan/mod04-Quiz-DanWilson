@@ -1,6 +1,93 @@
 * {
     margin: 0;
-    padding: 0;
+    padding: 0px;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
+:root {
+    --btn-color: rgb(214, 218, 223);
+    --btn-border: rgb(154, 174, 231);
+    --btn-hov: gray;
+}
+
+body {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;   
+}
+
+.timer {
+    display: flex;
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: solid;
+    border-radius: 5px;
+    border-width: 2px;
+    padding: 5px;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.answers {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 20vh;
+}
+
+.btn {
+    transition: box-shadow .3s ease;
+    margin: 2px;
+    padding: 4px;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: var(--btn-border);
+    background-color: var(--btn-color);
+    cursor: pointer;
+}
+
+#play-btn {
+    visibility: hidden;
+}
+
+
+.btn:hover {
+    color: var(--btn-color);
+    background-color: var(--btn-hov);
+    box-shadow: 3px 3px 10px rgb(83, 83, 83);
+}
+
+.btn:active {
+    color: blue;
+    background-color: var(--btn-color);
+}
+
+.gameover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 75px;
+    visibility: hidden;
+}
