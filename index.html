@@ -9,8 +9,48 @@
 
 </head>
 <body>
-    
-    
+
+    <header>
+        <h1>Javascript Quiz</h1>
+    </header>
+
+    <div class="timer hidden" id="time"></div>
+
+    <section class="container">
+
+        <div id="question-card" class="hidden">
+
+            <div id="question">
+                <h2>Question question question</h2>
+            </div>
+
+            <div class="answers" id="answer-chk">
+
+                <button class="btn">Answer 1</button> 
+                <button class="btn">Answer 2</button> 
+                <button class="btn">Answer 3</button> 
+                <button class="btn">Answer 4</button> 
+                
+            </div>
+
+        </div>
+
+    </section>
+
+    <div class="gameover hidden" id="end">
+        <h3>Game Over!</h3>
+    </div>
+
+    <section>
+
+        <div class="buttons">
+            <button id="start-btn" class="btn">Start Quiz!</button>
+            <button id="play-btn" class="btn hidden">Play Again?</button>
+            <a href="" class="scores">View high scores</a>
+        </div>
+
+    </section>
+
     <script src="./assets/script.js"></script>
 </body>
 </html>
