@@ -18,13 +18,13 @@
 
     <section class="container">
 
-        <div id="question-card" class="hidden">
+        <div id="questioncard" class="hidden">
 
             <div id="question">
                 <h2>Question question question</h2>
             </div>
 
-            <div class="answers" id="answer-chk">
+            <div class="answers" id="answer-btn">
 
                 <button class="btn">Answer 1</button> 
                 <button class="btn">Answer 2</button> 
@@ -33,7 +33,27 @@
                 
             </div>
 
+            <div id="feedback" class="feedback hidden">Placeholder</div>
+
         </div>
+
+    </section>
+
+    <div id="response" class="response hidden">
+        <label for="current score" id="score">Score:</label>
+    </div>
+
+    <div>
+        <a href="" class="scores">View high scores</a>
+    </div>
+
+    <section class="initials hidden">
+
+        <label for="initials">Enter initials:</label>
+
+        <input type="text" id="initials" name="initials" required>
+
+        <input type="submit" value="Submit">
 
     </section>
 
@@ -44,13 +64,13 @@
     <section>
 
         <div class="buttons">
-            <button id="start-btn" class="btn">Start Quiz!</button>
+            <button id="start-btn" class="btn hidden">Start Quiz!</button>
             <button id="play-btn" class="btn hidden">Play Again?</button>
-            <a href="" class="scores">View high scores</a>
         </div>
 
     </section>
 
     <script src="./assets/script.js"></script>
 </body>
+
 </html>
