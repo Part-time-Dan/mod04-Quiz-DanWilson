@@ -24,6 +24,8 @@ header {
     margin: 40px;   
 }
 
+
+
 .timer {
     display: flex;
     position: fixed;
@@ -42,6 +44,14 @@ section {
     align-items: center;
 }
 
+.container {
+    visibility: hidden;
+}
+
+h2 {
+    padding-bottom: 20px;
+}
+
 .answers {
     display: flex;
     flex-direction: column;
@@ -54,7 +64,6 @@ section {
     justify-content: center;
     align-items: center;
     position: absolute;
-    bottom: 20vh;
 }
 
 .btn {
@@ -76,7 +85,7 @@ section {
 .btn:hover {
     color: var(--btn-color);
     background-color: var(--btn-hov);
-    box-shadow: 3px 3px 10px rgb(83, 83, 83);
+    box-shadow: 3px 3px 8px rgb(83, 83, 83);
 }
 
 .btn:active {
@@ -84,10 +93,34 @@ section {
     background-color: var(--btn-color);
 }
 
+.feedback {
+    padding-top: 25px;
+}
+
+.response {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    padding-top: 10%;
+}
+
+.scores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.initials {
+    padding: 10px;
+    visibility: hidden;
+}
+
 .gameover {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 75px;
+    margin: 40px;
     visibility: hidden;
 }
