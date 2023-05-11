@@ -11,7 +11,6 @@ var save = document.getElementById("save")
 
 startButton.addEventListener("click", startGame);
 
-
 var timeLeft = 30;
 let score = 0;
 var currentQuestion= 0;
@@ -29,7 +28,6 @@ function countdown() {
 
     }, 1000);
 }
-
 
 //run game
 function startGame() {
