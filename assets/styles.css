@@ -44,29 +44,37 @@ section {
     align-items: center;
 }
 
+#start-btn {
+    width: 100px;    
+}
+
+#play-btn {
+    width: 100px;    
+}
+
+
 .container {
-    visibility: hidden;
+    visibility: visible;
 }
 
 h2 {
     padding-bottom: 20px;
 }
 
-.answers {
+/* .answers {
     display: flex;
     flex-direction: column;
     align-items: start;
-}
+} */
 
-.buttons {
+#question {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    position: absolute;
+    align-items: start;
 }
 
-.btn {
+.button {
     transition: box-shadow .3s ease;
     margin: 2px;
     padding: 4px;
@@ -77,23 +85,25 @@ h2 {
     cursor: pointer;
 }
 
-#play-btn {
-    visibility: hidden;
+#play-button {
+    /* visibility: hidden; */
 }
 
 
-.btn:hover {
+.button:hover {
     color: var(--btn-color);
     background-color: var(--btn-hov);
     box-shadow: 3px 3px 8px rgb(83, 83, 83);
 }
 
-.btn:active {
+.button:active {
     color: blue;
     background-color: var(--btn-color);
 }
 
 .feedback {
+    display: flex;
+    justify-content: center;
     padding-top: 25px;
 }
 
@@ -102,19 +112,7 @@ h2 {
     justify-content: center;
     align-items: center;
     visibility: hidden;
-    padding-top: 10%;
-}
-
-.scores {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-.initials {
-    padding: 10px;
-    visibility: hidden;
+    padding-top: 5%;
 }
 
 .gameover {
@@ -122,5 +120,17 @@ h2 {
     justify-content: center;
     align-items: center;
     margin: 40px;
+    visibility: hidden;
+}
+
+.scores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.initials {
+    padding: 10px;
     visibility: hidden;
 }
