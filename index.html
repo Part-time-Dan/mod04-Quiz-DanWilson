@@ -16,32 +16,43 @@
 
     <div class="timer hidden" id="time"></div>
 
-    <section class="container">
+    <section class="container" id="quiz-container">
 
         <div id="questioncard" class="hidden">
 
             <div id="question">
-                <h2>Question question question</h2>
+                <h2></h2>
             </div>
 
             <div class="answers" id="answer-btn">
 
-                <button class="btn">Answer 1</button> 
-                <button class="btn">Answer 2</button> 
-                <button class="btn">Answer 3</button> 
-                <button class="btn">Answer 4</button> 
-                
-            </div>
+                <!-- <button class="btn" id="button">Answer 1</button>  
+                <button class="btn" id="button">Answer 2</button> 
+                <button class="btn" id="button">Answer 3</button> 
+                <button class="btn" id="button">Answer 4</button> -->
 
-            <div id="feedback" class="feedback hidden">Placeholder</div>
+            </div>
 
         </div>
 
     </section>
 
+    <div id="feedback" class="feedback hidden"></div>
+
     <div id="response" class="response hidden">
         <label for="current score" id="score">Score:</label>
     </div>
+
+    <div class="gameover hidden" id="end">
+        <h3>Game Over!</h3>
+    </div>
+
+    <section>
+
+        <div class="buttons">
+            <button type="button" id="start-btn" class="button">Start Quiz!</button>
+        </div>
+    </section>
 
     <div>
         <a href="" class="scores">View high scores</a>
@@ -53,20 +64,7 @@
 
         <input type="text" id="initials" name="initials" required>
 
-        <input type="submit" value="Submit">
-
-    </section>
-
-    <div class="gameover hidden" id="end">
-        <h3>Game Over!</h3>
-    </div>
-
-    <section>
-
-        <div class="buttons">
-            <button id="start-btn" class="btn hidden">Start Quiz!</button>
-            <button id="play-btn" class="btn hidden">Play Again?</button>
-        </div>
+        <input type="submit" value="Submit" class="button" id="save">
 
     </section>
 
