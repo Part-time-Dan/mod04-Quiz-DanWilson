@@ -19,7 +19,7 @@ N/A
 
 ## Usage
 
-Visit the site here [Dan's Quiz](https://part-time-dan.github.io/)
+Visit the site here [Dan's Quiz](https://part-time-dan.github.io/mod04-Quiz-DanWilson/)
 
 Click the "Start Quiz" button and use the in-game buttons. Answer questions and see user feedback for correct/incorrect conditions, an updating score counter and leaderboard using local storage. Try answering questions incorrectly to see the countdown deduct 5 seconds.
 
@@ -34,3 +34,5 @@ Console line break when quiz ends. I am not sure if there is a clean way to end 
 N/A
 
 ## Deploy Git Page Screenshot
+
+![Image of deployed quiz](./assets/deployscreencap.PNG)
