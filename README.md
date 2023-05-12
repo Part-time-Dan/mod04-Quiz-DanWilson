@@ -35,4 +35,4 @@ N/A
 
 ## Deploy Git Page Screenshot
 
-![Image of deployed quiz](./assets/deployscreencap.PNG)
+![Image of deployed quiz](./assets/newImage.PNG)
