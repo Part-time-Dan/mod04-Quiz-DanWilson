@@ -17,30 +17,19 @@
     <div class="timer hidden" id="time"></div>
 
     <section class="container" id="quiz-container">
-
         <div id="questioncard" class="hidden">
 
             <div id="question">
                 <h2></h2>
             </div>
 
-            <div class="answers" id="answer-btn">
-
-                <!-- <button class="btn" id="button">Answer 1</button>  
-                <button class="btn" id="button">Answer 2</button> 
-                <button class="btn" id="button">Answer 3</button> 
-                <button class="btn" id="button">Answer 4</button> -->
-
-            </div>
-
         </div>
-
     </section>
 
     <div id="feedback" class="feedback hidden"></div>
 
     <div id="response" class="response hidden">
-        <label for="current score" id="score">Score:</label>
+        <label for="current score" id="score"></label>
     </div>
 
     <div class="gameover hidden" id="end">
@@ -48,24 +37,23 @@
     </div>
 
     <section>
-
         <div class="buttons">
-            <button type="button" id="start-btn" class="button">Start Quiz!</button>
+            <button type="button" id="start-btn" class="button">Start Quiz</button>
         </div>
     </section>
-
-    <div>
-        <a href="" class="scores">View high scores</a>
-    </div>
 
     <section class="initials hidden">
 
         <label for="initials">Enter initials:</label>
 
-        <input type="text" id="initials" name="initials" required>
+        <input type="text" id="inputfield" name="initials" required>
 
         <input type="submit" value="Submit" class="button" id="save">
 
+    </section>
+
+    <section id="all-scores">
+        <h4>High Scores</h4>
     </section>
 
     <script src="./assets/script.js"></script>

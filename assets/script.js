@@ -1,17 +1,16 @@
 var timeEl = document.querySelector(".timer");
 var startButton = document.getElementById("start-btn");
-var playButton = document.getElementById("play-btn");
 var gameOver = document.getElementById("end");
 var questionContainer = document.querySelector(".container");
 var totalScore = document.getElementById("score");
-var initialsInput = document.getElementById("initials");
+var initialsInput = document.getElementById("inputfield");
 var initialsButton = document.querySelector(".initials")
 var feedbackEl = document.getElementById("feedback");
 var save = document.getElementById("save")
 
 startButton.addEventListener("click", startGame);
 
-var timeLeft = 30;
+var timeLeft = 21;
 let score = 0;
 var currentQuestion= 0;
 
@@ -46,27 +45,13 @@ function endGame() {
     gameOver.setAttribute("style", "visibility: visible");
     initialsInput.setAttribute("style", "visibility: visible");
     initialsButton.setAttribute("style", "visibility: visible");
+    quizContainer.setAttribute("style", "visibility: hidden");
     timeLeft = 0;
     timeEl.textContent = "Time left: " + timeLeft;
     console.log("Game over!");
 }
 
-save.addEventListener("click", function() {
-
-    console.log(initialsInput.value)
-    console.log(score);
-    localStorage.setItem(initialsInput.value, score);
-
-});
-
-
-
-// Object.keys(localStorage).forEach((key) => {
-//     console.log(localStorage.getItem(key));
-//    });
-   
-
-//quiz material
+//quiz materials
 const myQuestions = [ {
     question: "The answer to this question is 'A'",
     choices: ["A", "B", "C", "D"],
@@ -82,10 +67,17 @@ const myQuestions = [ {
     choices: ["A", "B", "C", "D"],
     correctAnswer: "C"
 },
+{
+    question: "The answer to this question is not 'C' or 'D' or 'A'",
+    choices: ["A", "B", "C", "D"],
+    correctAnswer: "B"
+},
 ];
 
-console.log(myQuestions)
+// console.log(myQuestions)
 
+
+//get questions from myQuestions object array
 const quizContainer = document.getElementById("quiz-container");
 function getQuestion(currentIndex) { 
     const currentQuestion = myQuestions[currentIndex]
@@ -95,9 +87,13 @@ function getQuestion(currentIndex) {
     questionContent.innerText = currentQuestion.question;
     questionDiv.appendChild(questionContent);
 
+//generate answer button
     currentQuestion.choices.forEach(chooseAnswer => {
         // console.log(chooseAnswer)
         const answerButton = document.createElement("button");
+        answerButton.style.margin= 'auto';
+        answerButton.style.marginTop= '15px';
+        answerButton.style.padding= '5px 15px 5px 15px';
         answerButton.innerText = chooseAnswer;
         answerButton.classList.add("button");
 
@@ -114,12 +110,13 @@ document.addEventListener("click", (event) => {
             // console.log(myQuestions[currentQuestion].correctAnswer + event.target.innerText)
             if(event.target.innerText === myQuestions[currentQuestion].correctAnswer) {
                 score ++;
-                totalScore.innerText = "Your score: " + score + "/3";
+                totalScore.innerText = "Your score: " + score + " / " + myQuestions.length;
                 feedbackEl.textContent = "Correct!"
                 console.log("correct")
             } else {
-                timeLeft -= 10;
-                feedbackEl.textContent = "Incorrect. -10 seconds!"
+                timeLeft -= 5;
+                totalScore.innerText = "Your score: " + score + " / " + myQuestions.length;
+                feedbackEl.textContent = "Incorrect. Lose 5 seconds!"
             }
             currentQuestion = currentQuestion + 1;
             if (currentQuestion >= myQuestions.length) {
@@ -132,3 +129,49 @@ document.addEventListener("click", (event) => {
 
     }
 });
+
+//character limit on initials field
+const maxLength = 6;
+initialsInput.setAttribute('maxlength', maxLength);
+initialsInput.addEventListener('keyup', function() {
+    const currentValue = initialsInput.value;
+
+    if(currentValue.length > maxLength) {
+        initialsInput.value = currentValue.substring(0, maxLength);
+    }
+});
+
+
+//refresh page on submit to update scoreboard and restart quiz
+initialsInput.addEventListener("keypress", function(event) {
+    if(event.key === 'Enter') {
+        localStorage.setItem(initialsInput.value, score);
+        location.reload(); 
+    }
+});
+
+save.addEventListener("click", function() {
+
+    // console.log(initialsInput.value)
+    // console.log(score);
+    localStorage.setItem(initialsInput.value, score);
+    location.reload();
+});
+
+//local storage get. displays highscores directly on page from highest to lowest
+const container = document.getElementById("all-scores");
+const locStoreVal = [];
+
+
+Object.keys(localStorage).forEach((key) => {
+    const value = localStorage.getItem(key);
+    locStoreVal.push({key, value});
+});
+
+locStoreVal.sort((a, b) => b.value - a.value);
+
+for (let i = 0; i < locStoreVal.length; i++) {
+    const element = document.createElement("p");
+    element.textContent = `${locStoreVal[i].key}: ${locStoreVal[i].value}`;
+    container.appendChild(element);
+} 
